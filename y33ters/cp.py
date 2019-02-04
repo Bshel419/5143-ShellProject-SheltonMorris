@@ -1,7 +1,5 @@
 from shutil import copyfile
 
-path = '.'
-
 def cd(old, new):
     try:
         copyfile(old, new)
