@@ -3,7 +3,7 @@ import os
 path = '.'
 
 def rm (name):
-    if os.path.exists(name)
+    if os.path.exists(name):
         try:
             os.remove(name)
         except OSError:

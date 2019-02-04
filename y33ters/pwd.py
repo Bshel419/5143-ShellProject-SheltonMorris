@@ -2,6 +2,6 @@ import os
 
 path = '.'
 
-def pwd(aFlag=None, lFlag = None, hFlag = None):
+def pwd():
     name = os.path.dirname(path)
     print(name)
