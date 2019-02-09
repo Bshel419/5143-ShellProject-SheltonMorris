@@ -1,6 +1,6 @@
 from shutil import copyfile
 
-def cd(old, new):
+def cp(old, new):
     try:
         copyfile(old, new)
     except IOError:

@@ -1,0 +1,2 @@
+def less():
+	print("lul")
