@@ -1,2 +1,4 @@
+import subprocess
+
 def who():
-	print("WHO DAT")
+	print(subprocess.check_output("who"))

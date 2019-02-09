@@ -30,7 +30,6 @@ if __name__ == "__main__":
     loop = True
 
     while(loop):
-        print(os.getcwd())
         cmd = input(">> ")
         history.append(cmd)
 
@@ -38,9 +37,9 @@ if __name__ == "__main__":
         
         print(cmd)
 
-        if cmd[0] == "cd":
-            commandDic["cd"]()
-
+        
         if cmd[0] == "REEE":
             loop = False
+        else:
+            commandDic[cmd[0]]()
 
