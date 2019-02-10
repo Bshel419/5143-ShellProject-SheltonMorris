@@ -23,23 +23,32 @@ if __name__ == "__main__":
         'who': yt.who
     }
     
-
     argsDic = {"Command": [], "Params": [], "Flags": [], "Output":[]}
     history = []
 
     loop = True
+
 
     while(loop):
         cmd = input(">> ")
         history.append(cmd)
 
         cmd = cmd.split()
-        
-        print(cmd)
 
-        
+        for arg in cmd:
+            if arg in commandDic:
+                argsDic["Command"].append(arg)
+            elif arg[0] == '-':
+                argsDic["Flags"].append(arg)
+            else:
+                argsDic["Params"].append(arg)
+
+
         if cmd[0] == "REEE":
             loop = False
+        elif cmd[0] == "history":
+            for line in history:
+                print(line)
         else:
             commandDic[cmd[0]]()
 

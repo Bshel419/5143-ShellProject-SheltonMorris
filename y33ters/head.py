@@ -6,4 +6,5 @@ def head(name, num):
             for line in treasure:
                 print(line)
                 num -=1
+    return
                 

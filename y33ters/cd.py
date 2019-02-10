@@ -14,3 +14,5 @@ def cd(directory=None, homeFlag=None, backFlag=None):
         os.chdir('..')
     else:
         os.chdir('~')
+
+    return

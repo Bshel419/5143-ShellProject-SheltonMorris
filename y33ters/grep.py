@@ -6,3 +6,4 @@ def grep(key, name):
         for line in treasure:
             line = re.findall(key, line)
             print(line)
+    return

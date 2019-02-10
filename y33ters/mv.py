@@ -8,3 +8,4 @@ def mv(old, new):
 
     except IOError:
         print("Destination location (" + new + ") is not writable")
+    return

@@ -7,3 +7,4 @@ def mkdir(name):
         os.mkdir(path + name)
     except OSError:
         print("Cannot create " + name + " directory")
+    return

@@ -10,3 +10,4 @@ def rm (name):
             print("Cannot delete directories")
     else:
         print("This file does not exist")
+    return

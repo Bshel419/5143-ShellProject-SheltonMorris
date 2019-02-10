@@ -7,3 +7,4 @@ def rmdir (path):
         os.rmdir(path)
     except OSError:
         print("The directory" + path + "is not empty.")
+    return
