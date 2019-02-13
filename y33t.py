@@ -48,9 +48,10 @@ if __name__ == "__main__":
                     argsDic["Flags"].append(arg)
                 else:
                     argsDic["Params"].append(arg)
-
+ 
             commandDic[cmd[0]](argsDic["Command"], argsDic["Flags"], argsDic["Params"])
 
-        argsDic.clear()
+        for k in argsDic:
+            argsDic[k] = []
         cmd = []
 
