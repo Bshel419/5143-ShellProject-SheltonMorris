@@ -1,10 +1,9 @@
 import os
 
-path = '.'
 
-def rmdir (path):
+def rmdir (command, flags, params):
     try:
-        os.rmdir(path)
+        os.rmdir(params[0])
     except OSError:
         print("The directory" + path + "is not empty.")
     return

@@ -1,8 +1,8 @@
 from shutil import copyfile
 
-def cp(old, new):
+def cp(command, flags, params):
     try:
-        copyfile(old, new)
+        copyfile(params[0], params[1])
     except IOError:
         print("Destination location (" + new + ") is not writable")
     return

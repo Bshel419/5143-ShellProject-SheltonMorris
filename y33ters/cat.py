@@ -1,7 +1,7 @@
 import os
 
-def cat(name, files):
-    with open(name) as treasure:
+def cat(command, flags, params):
+    with open(params[0]) as treasure:
         for line in treasure:
             print(line)
     return

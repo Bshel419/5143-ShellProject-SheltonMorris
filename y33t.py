@@ -35,20 +35,22 @@ if __name__ == "__main__":
 
         cmd = cmd.split()
 
-        for arg in cmd:
-            if arg in commandDic:
-                argsDic["Command"].append(arg)
-            elif arg[0] == '-':
-                argsDic["Flags"].append(arg)
-            else:
-                argsDic["Params"].append(arg)
-
-
         if cmd[0] == "REEE":
             loop = False
         elif cmd[0] == "history":
             for line in history:
                 print(line)
         else:
-            commandDic[cmd[0]]()
+            for arg in cmd:
+                if arg in commandDic:
+                    argsDic["Command"].append(arg)
+                elif arg[0] == '-':
+                    argsDic["Flags"].append(arg)
+                else:
+                    argsDic["Params"].append(arg)
+
+            commandDic[cmd[0]](argsDic["Command"], argsDic["Flags"], argsDic["Params"])
+
+        argsDic.clear()
+        cmd = []
 

@@ -1,9 +1,9 @@
 import os
 import re
 
-def grep(key, name):
-    with open(name) as treasure:
+def grep(command, flags, params):
+    with open(params[0]) as treasure:
         for line in treasure:
-            line = re.findall(key, line)
+            line = re.findall(params[1], line)
             print(line)
     return

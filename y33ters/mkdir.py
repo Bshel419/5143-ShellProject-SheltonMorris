@@ -1,10 +1,8 @@
 import os
 
-path = '.'
-
-def mkdir(name):
+def mkdir(command, flags, params):
     try:
-        os.mkdir(path + name)
+        os.mkdir(params[0])
     except OSError:
         print("Cannot create " + name + " directory")
     return
