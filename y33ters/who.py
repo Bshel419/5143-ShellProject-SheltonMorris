@@ -1,5 +1,5 @@
 import subprocess
 
-def who():
+def who(command, flags, params, output):
 	print(subprocess.check_output("who"))
 	return

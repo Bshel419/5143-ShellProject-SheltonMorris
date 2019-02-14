@@ -47,10 +47,16 @@ if __name__ == "__main__":
                     argsDic["Command"].append(arg)
                 elif arg[0] == '-':
                     argsDic["Flags"].append(arg)
+                elif arg == '>':
+                    argsDic["Output"].append(cmd[cmd.index(arg)+1])
                 else:
-                    argsDic["Params"].append(arg)
+                    if arg not in argsDic["Output"]:
+                        argsDic["Params"].append(arg)
 
-            commandDic[cmd[0]](argsDic["Command"], argsDic["Flags"], argsDic["Params"])
+
+            for command in argsDic["Command"]:
+                commandDic[command](argsDic["Command"], argsDic["Flags"], argsDic["Params"], argsDic["Output"])
+
 
         for k in argsDic:
             argsDic[k] = []

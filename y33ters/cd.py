@@ -2,7 +2,7 @@ import os
 
 path = '.'
 
-def cd(command, flags, params):
+def cd(command, flags, params, output):
     if len(params) == 1:
         if params[0] == '~':
             os.chdir(os.path.expanduser('~'))

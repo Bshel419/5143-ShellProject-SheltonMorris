@@ -2,7 +2,7 @@ from shutil import move
 
 path = '.'
 
-def mv(old, new):
+def mv(command, flags, params, output):
     try:
         move(old, new)
 

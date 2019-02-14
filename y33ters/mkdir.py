@@ -1,6 +1,6 @@
 import os
 
-def mkdir(command, flags, params):
+def mkdir(command, flags, params, output):
     try:
         os.mkdir(params[0])
     except OSError:

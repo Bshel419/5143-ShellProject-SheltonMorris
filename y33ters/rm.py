@@ -2,7 +2,7 @@ import os
 
 path = '.'
 
-def rm (name):
+def rm (command, flags, params, output):
     if os.path.exists(name):
         try:
             os.remove(name)
