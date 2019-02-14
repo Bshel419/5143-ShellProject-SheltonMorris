@@ -1,9 +1,10 @@
 import os
 
-def tail(name, num):
-    while num > 0:
-        with open(name) as treasure:
-            for line in treasure:
-                print(line)
-                num -=1
+def tail(command, flags, params):
+    with open(params[0]) as treasure:
+        treasure = treasure.readlines()
+        i = len(treasure) - int(params[1])
+        while i != len(treasure):
+            print(treasure[i])
+            i = i + 1
     return

@@ -1,10 +1,9 @@
 import os
 
-def head(name, num):
-    while num > 0:
-        with open(name) as treasure:
-            for line in treasure:
-                print(line)
-                num -=1
+def head(command, flags, params):
+    with open(params[0]) as treasure:
+        treasure = treasure.readlines()
+        for x in range(int(params[1])):
+            print(treasure[x])
     return
                 

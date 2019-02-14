@@ -2,17 +2,23 @@ import os
 
 path = '.'
 
-def cd(directory=None, homeFlag=None, backFlag=None):
-    if directory != None:
-        try:
-            os.chdir(path + directory)
-        except OSError:
-            print("ERROR: " + directory + " directory not found" )
-    elif homeFlag != None:
-        os.chdir('~')
-    elif backFlag != None:
-        os.chdir('..')
+def cd(command, flags, params):
+    if len(params) == 1:
+        if params[0] == '~':
+            os.chdir(os.path.expanduser('~'))
+        elif params[0] == '..':
+            os.chdir('..')
+        elif params[0] == '.':
+            os.chdir('.')
+        else:
+            try:
+                os.chdir(path + params[0])
+            except OSError:
+                print("ERROR: " + params[0] + " directory not found" )
+    elif len(params) > 1:
+        print("ERROR: cd takes 0-1 arguments (cd, cd *directoryName*, cd ~, cd ..")
     else:
-        os.chdir('~')
+        os.chdir(os.path.expanduser('~'))
+
 
     return

@@ -30,7 +30,8 @@ if __name__ == "__main__":
 
 
     while(loop):
-        cmd = input(">> ")
+        print("\033[1;36;40m" + os.getcwd())
+        cmd = input("\033[1;37;40m >> ")
         history.append(cmd)
 
         cmd = cmd.split()
@@ -48,10 +49,11 @@ if __name__ == "__main__":
                     argsDic["Flags"].append(arg)
                 else:
                     argsDic["Params"].append(arg)
- 
+
             commandDic[cmd[0]](argsDic["Command"], argsDic["Flags"], argsDic["Params"])
 
         for k in argsDic:
             argsDic[k] = []
+
         cmd = []
 

@@ -1,8 +1,6 @@
 import os
 
-path = '.'
 
-def pwd():
-    name = os.path.dirname(path)
-    print(name)
+def pwd(command, flags, params):
+    print(os.getcwd())
     return
