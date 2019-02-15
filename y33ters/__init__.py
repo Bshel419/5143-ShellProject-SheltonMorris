@@ -8,7 +8,7 @@ from .less import less
 from .ls import ls
 from .mkdir import mkdir
 from .mv import mv
-from .pwd import pwd
+from .pwd1 import pwd
 from .rm import rm
 from .rmdir import rmdir
 from .sort import sort

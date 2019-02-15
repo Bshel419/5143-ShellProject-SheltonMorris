@@ -1,14 +1,15 @@
 import os
 
 def cat(command, flags, params, output):
-        
-        for f in params:
-                with open(f) as treasure:
-                        if not output:
+        if not output:
+                for f in params:
+                        with open(f) as treasure:
                                 for line in treasure:
                                         print(line)
-                        else:
-                                with open(output[0], "w") as outfile:
+        else:
+                with open(output[0], "w") as outfile:
+                        for f in params:
+                                with open(f) as treasure:
                                         for line in treasure:
                                                 outfile.write(line)
 

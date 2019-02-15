@@ -71,10 +71,9 @@ if __name__ == "__main__":
                         argsDic["Params"].append(arg)
 
             for command in argsDic["Command"]:
-                try:
                     commandDic[command](argsDic["Command"], argsDic["Flags"], argsDic["Params"], argsDic["Output"])
-                except:
-                    print("ERROR:" + command + " not a valid command")
+                #except:
+                    #print("ERROR:" + command + " not a valid command")
 
             if not argsDic["Command"]:
                 print("ERROR: " + cmd[0] + " Command not found")
