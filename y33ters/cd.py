@@ -1,7 +1,5 @@
 import os
 
-path = '.'
-
 def cd(command, flags, params, output):
     if len(params) == 1:
         if params[0] == '~':
@@ -12,7 +10,7 @@ def cd(command, flags, params, output):
             os.chdir('.')
         else:
             try:
-                os.chdir(path + params[0])
+                os.chdir('./' + params[0])
             except OSError:
                 print("ERROR: " + params[0] + " directory not found" )
     elif len(params) > 1:
