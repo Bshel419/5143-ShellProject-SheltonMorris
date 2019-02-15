@@ -1,5 +1,9 @@
 import subprocess
 
 def who(command, flags, params, output):
-	print(subprocess.check_output("who"))
+	if not output:
+		print(subprocess.check_output("who"))
+	else:
+		with open(output[0], 'w') as outfile:
+			outfile.write(subprocess.check_output("who"))
 	return
