@@ -1,7 +1,5 @@
 from shutil import move
 
-path = '.'
-
 def mv(command, flags, params, output):
     try:
         move(params[0], params[1])
