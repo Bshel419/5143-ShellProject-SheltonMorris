@@ -59,7 +59,7 @@ if __name__ == "__main__":
             for arg in cmd:
                 if arg in commandDic:
                     argsDic["Command"].append(arg)
-                elif arg[0] == '-':
+                elif arg[0] == '-' or arg == '*':
                     argsDic["Flags"].append(arg)
                 elif arg == '>' or arg == '>>':
                     try:
@@ -71,9 +71,10 @@ if __name__ == "__main__":
                         argsDic["Params"].append(arg)
 
             for command in argsDic["Command"]:
+                try:
                     commandDic[command](argsDic["Command"], argsDic["Flags"], argsDic["Params"], argsDic["Output"])
-                #except:
-                    #print("ERROR:" + command + " not a valid command")
+                except:
+                    print("ERROR:" + command + " not a valid command")
 
             if not argsDic["Command"]:
                 print("ERROR: " + cmd[0] + " Command not found")
