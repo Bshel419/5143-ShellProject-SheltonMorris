@@ -52,10 +52,10 @@ if __name__ == "__main__":
                 x += 1
         #change permissions
         elif cmd[0] == "chmod":
-            try:
-                os.chmod(cmd[2], '0o'+str(cmd[1]))
-            except:
-                print("ERROR: Something wrong with chmod or file name")
+            #try:
+                os.chmod(cmd[2], int(cmd[1]))
+            #except:
+                #print("ERROR: Something wrong with chmod or file name")
         #Else we got a command to run boys        
         else:
             #checks for the !x command
@@ -97,4 +97,3 @@ if __name__ == "__main__":
             argsDic[k] = []
 
         cmd = []
-
