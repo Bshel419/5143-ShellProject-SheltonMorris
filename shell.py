@@ -26,6 +26,7 @@ if __name__ == "__main__":
     argsDic = {"Command": [], "Params": [], "Flags": [], "Output":[]}
     #list that holds all the commands input
     history = []
+    historyFile = open("history.txt", "w")
 
     loop = True
 
@@ -38,6 +39,7 @@ if __name__ == "__main__":
         #append cmd to list if it's not a call to print the history
         if cmd != "history":
             history.append(cmd)
+            historyFile.write(cmd + '\n')  
         #turns the string in to a list of words that made up the string
         cmd = cmd.split()
 
@@ -97,3 +99,4 @@ if __name__ == "__main__":
             argsDic[k] = []
 
         cmd = []
+    
