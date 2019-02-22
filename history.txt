@@ -1,7 +1,6 @@
-ls
-ls -a
-ls -l
-ls -la
-ls lah
-ls -lah
+who
+grep coconuts sonicsux.txt
+grep sonicsux.txt coconuts
+grep -l sonicsux.txt command
+grep -l sonicsux.txt coconuts
 exit
